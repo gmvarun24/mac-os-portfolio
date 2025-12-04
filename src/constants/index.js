@@ -1,3 +1,5 @@
+const EMAIL = "gmvarungmvarun32524@gmail.com";
+
 const navLinks = [
   {
     id: 1,
@@ -213,6 +215,7 @@ export {
   socials,
   photosLinks,
   gallery,
+  EMAIL,
 };
 
 const WORK_LOCATION = {

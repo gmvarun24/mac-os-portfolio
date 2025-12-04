@@ -1,5 +1,5 @@
 import { WindowControls } from "#components";
-import { socials } from "#constants";
+import { EMAIL, socials } from "#constants";
 import WindowWrapper from "#hoc/WindowWrapper";
 import React from "react";
 
@@ -25,12 +25,12 @@ const Contact = () => {
         <p>
           Send me an email at{" "}
           <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=gmvarungmvarun32524@gmail.com"
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-500 hover:underline"
           >
-            gmvarungmvarun32524@gmail.com
+            {EMAIL}
           </a>
         </p>
         <ul>
