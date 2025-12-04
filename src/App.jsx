@@ -1,5 +1,5 @@
-import React from "react";
-import { Welcome, Navbar, Dock, Home } from "#components";
+import React, { useState } from "react";
+import { Welcome, Navbar, Dock, Home, Startup } from "#components";
 import { Draggable } from "gsap/Draggable";
 import gsap from "gsap";
 import {
@@ -14,22 +14,36 @@ import {
 } from "#windows";
 
 gsap.registerPlugin(Draggable);
+
 const App = () => {
+  const [startupComplete, setStartupComplete] = useState(false);
+
   return (
     <main>
-      <Navbar />
-      <Welcome />
-      <Home />
-      <Dock />
+      {!startupComplete && (
+        <Startup onComplete={() => setStartupComplete(true)} />
+      )}
 
-      <Terminal />
-      <Safari />
-      <Resume />
-      <Finder />
-      <Text />
-      <Image />
-      <Contact />
-      <Photos />
+      <div
+        style={{
+          opacity: startupComplete ? 1 : 0,
+          transition: "opacity 0.5s ease-in",
+        }}
+      >
+        <Navbar />
+        <Welcome />
+        <Home />
+        <Dock />
+
+        <Terminal />
+        <Safari />
+        <Resume />
+        <Finder />
+        <Text />
+        <Image />
+        <Contact />
+        <Photos />
+      </div>
     </main>
   );
 };

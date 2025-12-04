@@ -59,6 +59,36 @@ body {
       @apply text-sm font-medium text-black;
     }
   }
+
+  #startup {
+    @apply fixed inset-0 w-dvw h-dvh bg-[#0a0a0a] z-[9999] flex-center;
+
+    .startup-content {
+      @apply flex flex-col items-center gap-12;
+
+      .logo-container {
+        @apply flex-center;
+
+        .apple-logo {
+          @apply w-28 h-28 sm:w-40 sm:h-40 object-contain;
+          filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+        }
+      }
+
+      .progress-container {
+        @apply w-48 sm:w-64;
+
+        .progress-bar {
+          @apply w-full h-1 bg-white/20 rounded-full overflow-hidden;
+
+          .progress-fill {
+            @apply h-full bg-white rounded-full transition-all duration-100;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+          }
+        }
+      }
+    }
+  }
 }
 
 @layer components {
@@ -73,7 +103,7 @@ body {
       @apply sm:hidden m-7 bg-red-300/20 backdrop-blur-lg p-3 rounded-md absolute top-10;
 
       p {
-        @apply flex-1 text-[16px] text-center font-roboto text-gray-400;
+        @apply flex-1 text-[16px] text-center font-roboto;
       }
     }
   }
