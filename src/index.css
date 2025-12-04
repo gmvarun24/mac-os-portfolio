@@ -304,6 +304,23 @@ body {
         @apply font-bold text-sm text-center flex-1;
       }
     }
+
+    .pdf-container {
+      @apply overflow-y-auto max-h-[80vh] p-4 bg-gray-100;
+
+      .pdf-page {
+        @apply mb-4 shadow-lg;
+
+        &:last-child {
+          @apply mb-0;
+        }
+      }
+    }
+
+    .loading,
+    .error-message {
+      @apply p-8 text-center text-sm text-gray-600;
+    }
   }
 
   #finder {
